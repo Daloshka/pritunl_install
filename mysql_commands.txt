@@ -68,7 +68,8 @@ AND phone REGEXP '^[0-9]{10,14}$';
 
 rfcont_full
 
-SELECT phone_number as phone,
+INSERT IGNORE INTO all_db.main_full (phone, email, name)
+SELECT phone_number as phone, rfcont_email as email,
   CASE
     WHEN LENGTH(rfcont_name) - LENGTH(REPLACE(rfcont_name, ' ', '')) = 2 THEN
       CASE
