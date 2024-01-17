@@ -1,3 +1,9 @@
+Добавление Индексов
+
+ALTER TABLE all_db.main_full
+ADD INDEX idx_phone (phone),
+ADD INDEX idx_email (email);
+
 
 Скопировать СХЕМУ таблицы
 CREATE TABLE new_table_name LIKE old_table_name;
