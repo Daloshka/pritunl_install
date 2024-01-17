@@ -1,0 +1,67 @@
+Возврат к 0
+ALTER TABLE all_db.main_full AUTO_INCREMENT = 1;
+SET SQL_SAFE_UPDATES = 0;
+
+RENAME TABLE текущее_имя_таблицы TO новое_имя_таблицы;
+
+
+SKIP linkedin
+
+askona_full
+
+INSERT IGNORE INTO all_db.main_full (phone, email, name)
+SELECT LOGIN, EMAIL, NAME
+FROM all_db.askona_full
+WHERE NAME REGEXP '^[А-Я][а-яёЁ]*$'
+AND NAME NOT REGEXP '(.)\\1{2,}'
+AND EMAIL REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$' 
+AND LOGIN REGEXP '^[0-9]{10,14}$'; 
+
+facebook_full
+INSERT IGNORE INTO all_db.main_full (phone, name)
+SELECT 
+    phone_number, SUBSTRING_INDEX(fb_full_name, ' ', 1) AS first_name
+FROM 
+    all_db.facebook_full
+WHERE 
+    fb_full_name REGEXP '^[A-Яа-яёЁ]*' 
+    AND fb_full_name NOT REGEXP '(.)\\1{2,}' 
+    AND fb_full_name NOT REGEXP '^[A-Za-z]+' 
+    AND phone_number REGEXP '^[0-9]{10,14}$';
+
+
+
+mailru_full
+
+INSERT IGNORE INTO all_db.main_full (phone, email, name)
+SELECT phone_number as phone, mailru_email as email, SUBSTRING_INDEX(mailru_full_name, ' ', 1) AS first_name
+FROM all_db.mailru_full
+HAVING first_name IS NOT NULL
+AND first_name REGEXP '^[А-Я][а-яёЁ]*$'
+AND first_name NOT REGEXP '(.)\\1{2,}'
+AND email REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$' 
+AND phone REGEXP '^[0-9]{10,14}$';
+
+miltor_full
+
+INSERT IGNORE INTO all_db.main_full (phone, email, name)
+SELECT phone_number as phone, miltor_email as email, SUBSTRING_INDEX(miltor_fio, ' ', 1) AS first_name
+FROM all_db.miltor_full
+HAVING first_name IS NOT NULL
+AND first_name != ''
+AND first_name REGEXP '^[А-Я][а-яёЁ]*$'
+AND first_name NOT REGEXP '(.)\\1{2,}'
+AND email REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$' 
+AND phone REGEXP '^[0-9]{10,14}$';
+
+
+nalog_full
+
+INSERT IGNORE INTO all_db.main_full (phone, email, name)
+SELECT phone, email, first_name
+FROM all_db.nalog_full
+HAVING first_name IS NOT NULL
+AND first_name != ''
+AND first_name REGEXP '^[А-Я][а-яёЁ]*$'
+AND email != ''
+AND phone REGEXP '^[0-9]{10,14}$';
