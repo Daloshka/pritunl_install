@@ -1,3 +1,6 @@
+
+Скопировать СХЕМУ таблицы
+CREATE TABLE new_table_name LIKE old_table_name;
 Возврат к 0
 ALTER TABLE all_db.main_full AUTO_INCREMENT = 1;
 SET SQL_SAFE_UPDATES = 0;
