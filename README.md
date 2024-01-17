@@ -1,5 +1,3 @@
-Установка Pritunl
-
 sudo apt update && sudo apt upgrade -y
 
 echo "deb http://repo.pritunl.com/stable/apt $(lsb_release -cs) main" | sudo 
