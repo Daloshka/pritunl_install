@@ -38,4 +38,5 @@ sudo apt install wireguard -y
 
 sudo systemctl restart pritunl
 
-___active ultimate____
+In the browser windows enter
+active ultimate
