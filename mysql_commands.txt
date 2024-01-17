@@ -65,3 +65,28 @@ AND first_name != ''
 AND first_name REGEXP '^[А-Я][а-яёЁ]*$'
 AND email != ''
 AND phone REGEXP '^[0-9]{10,14}$';
+
+rfcont_full
+
+SELECT phone_number as phone,
+  CASE
+    WHEN LENGTH(rfcont_name) - LENGTH(REPLACE(rfcont_name, ' ', '')) = 2 THEN
+      CASE
+        WHEN SUBSTRING_INDEX(SUBSTRING_INDEX(rfcont_name, ' ', -2), ' ', 1) REGEXP 'вна$|вич$' THEN NULL
+        ELSE SUBSTRING_INDEX(SUBSTRING_INDEX(rfcont_name, ' ', -2), ' ', 1)
+      END
+    ELSE
+      NULL
+  END AS first_name
+FROM all_db.rfcont_full
+WHERE
+  (CASE
+    WHEN LENGTH(rfcont_name) - LENGTH(REPLACE(rfcont_name, ' ', '')) = 2 THEN
+      CASE
+        WHEN SUBSTRING_INDEX(SUBSTRING_INDEX(rfcont_name, ' ', -2), ' ', 1) REGEXP 'вна$|вич$' THEN NULL
+        ELSE SUBSTRING_INDEX(SUBSTRING_INDEX(rfcont_name, ' ', -2), ' ', 1)
+      END
+    ELSE
+      NULL
+  END) REGEXP '^[А-Я][а-яёЁ]*$';
+
