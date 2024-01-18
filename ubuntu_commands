@@ -1,1 +1,41 @@
 
+
+
+
+rm example.txt
+rm -r *      OR        rm file1.txt file2.txt file3.txt
+mv старое_имя.txt новое_имя.txt        OR       mv /путь/к/старому_файлу.txt /путь/к/новому_файлу.txt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
