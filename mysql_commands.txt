@@ -80,14 +80,6 @@ AND first_name REGEXP '^[А-Я][а-яёЁ]{1,45}$'
 AND email != ''
 AND phone REGEXP '^[0-9]{10,14}$';
 
-SELECT name,
-       CASE
-           WHEN age < 18 THEN 'Молодой'
-           WHEN age >= 18 AND age < 65 THEN 'Взрослый'
-           ELSE 'Пожилой'
-       END AS age_group
-FROM people;
-
 
 rfcont_full
 
