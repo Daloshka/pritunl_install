@@ -1,10 +1,12 @@
 
 
+pwd         Путь к текущей директории   
 
+rm -r *      OR        rm file1.txt file2.txt file3.txt        Удалить файл(ы)
+mv старое_имя.txt новое_имя.txt  OR   mv /путь/к/старому_файлу.txt /путь/к/новому_файлу.txt
 
-rm example.txt
-rm -r *      OR        rm file1.txt file2.txt file3.txt
-mv старое_имя.txt новое_имя.txt        OR       mv /путь/к/старому_файлу.txt /путь/к/новому_файлу.txt
+cd ~/       Переход в директорю root/    или в home/user....
+
 
 
 
