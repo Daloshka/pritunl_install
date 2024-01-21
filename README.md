@@ -26,6 +26,9 @@ sudo apt install git -y
 
 git clone https://github.com/simonmicro/Pritunl-Fake-API.git    pritunl-api.simonmicro.de
 
+Команда поиска в Ubuntu
+sudo find / -name 'constants.py'
+
 cd Pritunl-Fake-API/
 
 cd server/
