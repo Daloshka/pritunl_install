@@ -1,0 +1,54 @@
+# user[id] - наводишься на юзера
+# ORG_ID
+# хуй найдёшь, только через CTRL+F   >   <a class="user-name title no-select" data-toggle="tooltip" title="" data-original-title="Click to modify this user">server_65a8d4b07e906fff4686af32</a>
+
+
+BASE_URL = 'https://vm486331515.1312312'
+API_TOKEN = '5iFaiyxuYpZzfvYJGy132131'
+API_SECRET = 'OFJJcwWy9WTfQJbJJy3131231'
+ORG_ID = '65a8d24cd2bcdcd1451243'
+
+from random import randint
+import requests
+import time
+import uuid
+import hmac
+import hashlib
+import base64
+import os
+
+def auth_request(method, path, headers=None, data=None):
+    auth_timestamp = str(int(time.time()))
+    auth_nonce = uuid.uuid4().hex
+    auth_string = '&'.join([API_TOKEN, auth_timestamp, auth_nonce,
+        method.upper(), path] + ([data] if data else []))
+    auth_signature = base64.b64encode(hmac.new(
+        API_SECRET.encode(), auth_string.encode(), hashlib.sha256).digest())
+    auth_headers = {
+        'Auth-Token': API_TOKEN,
+        'Auth-Timestamp': auth_timestamp,
+        'Auth-Nonce': auth_nonce,
+        'Auth-Signature': auth_signature,
+    }
+    print(f"Auth_headers: {auth_headers}")
+    if headers:
+        auth_headers.update(headers)
+    return getattr(requests, method.lower())(
+        BASE_URL + path,
+        verify=False,
+        headers=auth_headers,
+        data=data,
+    )
+
+try:
+    os.makedirs('test_client/my_confs')
+except:
+    pass
+
+resp = auth_request('GET',
+      '/key/%s/%s/%s.key' % ("65a8d24cjdasddsa", "65a8d250d2bcdcd75dasdas", "65a8d4b07e906dsdasda"),
+    )
+
+with open('test_client/my_confs/' + f"user{randint(0,999999)}" + '.ovpn', 'w') as conf_file:
+    conf_file.write(resp.content.decode('utf-8'))
+
