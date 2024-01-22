@@ -1,3 +1,4 @@
+<h1>Ubuntu</h1>
 sudo apt update && sudo apt upgrade -y
 
 echo "deb http://repo.pritunl.com/stable/apt $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/pritunl.list
@@ -37,10 +38,12 @@ python3 setup.py
 
 sudo apt install wireguard -y
 
+sudo systemctl restart pritunl
+
+In the browser windows enter ->  active ultimate
+
 <h1>DOCKER COOMANDS</h1>
 
 docker exec -it amnezia-awg bash          Открытие контейнера через bash консоль
 
-sudo systemctl restart pritunl
 
-In the browser windows enter ->  active ultimate
