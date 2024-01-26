@@ -42,8 +42,5 @@ sudo systemctl restart pritunl
 
 In the browser windows enter ->  active ultimate
 
-<h1>DOCKER COOMANDS</h1>
-
-docker exec -it amnezia-awg bash          Открытие контейнера через bash консоль
 
 
