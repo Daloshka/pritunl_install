@@ -1,7 +1,10 @@
 <h1>DOCKER COOMANDS</h1>
 
-docker exec -it amnezia-awg bash          Открытие контейнера через bash консоль
-opt/amnezia/awg/wg0.conf
+docker exec -it amnezia-awg bash     
+
+Открытие контейнера Amnezia-WG через bash консоль
+
+cd opt/amnezia/awg/wg0.conf
 
 <h1>Other</h1>
 
