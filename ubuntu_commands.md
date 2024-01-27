@@ -6,6 +6,10 @@ docker exec -it amnezia-awg bash
 
 cd opt/amnezia/awg/wg0.conf
 
+
+sudo sysctl -p
+
+
 <h1>Other</h1>
 
 history    история команд
