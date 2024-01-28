@@ -10,8 +10,10 @@ cd opt/amnezia/awg/wg0.conf
 sudo sysctl -p
 
 docker network ls
+
 docker network inspect ........
 
+Файлы wg, wg-quick, wireguard-go лежат в /usr/bin в докер контейнере.
 
 <h1>Other</h1>
 
