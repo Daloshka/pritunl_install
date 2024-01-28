@@ -9,9 +9,13 @@ cd opt/amnezia/awg/wg0.conf
 
 sudo sysctl -p
 
+docker network ls
+docker network inspect ........
+
 
 <h1>Other</h1>
 
+ip adress show
 history    история команд
 history -c   очистить историю команд
 
