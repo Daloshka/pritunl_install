@@ -6,6 +6,10 @@ docker exec -it amnezia-awg bash
 
 cd opt/amnezia/awg/wg0.conf
 
+Команда чтобы обращаться внутрь контейнера и выводить какую либо информацию
+
+docker exec amnezia-awg bash -c "cat /opt/amnezia/awg/wireguard_psk.key"
+
 
 sudo sysctl -p
 
