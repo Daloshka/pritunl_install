@@ -16,12 +16,16 @@ docker network inspect ........
 <h1>Other</h1>
 
 ip route show
-ip addr show
-iptables -L -n
-ip adress show
-history    история команд
-history -c   очистить историю команд
 
+ip addr show
+
+iptables -L -n
+
+ip adress show
+
+history    история команд
+
+history -c   очистить историю команд
 
 pwd         Путь к текущей директории   
 
