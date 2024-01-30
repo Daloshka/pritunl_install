@@ -21,7 +21,9 @@ docker network inspect ........
 
 <h1>Other</h1>
 
-sudo tcpdump -i ens3 host 176.114.132.51
+sudo tcpdump -i ens3 host 176.59.131.249
+
+IP ИГОРЬ ТЕЛЕФОН   176.59.131.249
 
 ip route show
 
