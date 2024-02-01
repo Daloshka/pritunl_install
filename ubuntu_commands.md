@@ -19,6 +19,12 @@ docker network inspect ........
 
 Файлы wg, wg-quick, wireguard-go лежат в /usr/bin в докер контейнере.
 
+<h1>IPTABLES</h1>
+
+iptables -L FORWARD -n --line-numbers
+
+iptables -D FORWARD 2    УДАЛИТЬ ПО НОМЕРУ ИЗ ПРЕДЫДУЩЕЙ КОМАНДЫ
+
 <h1>Other</h1>
 
 sudo tcpdump -i ens3 host 176.59.131.249
