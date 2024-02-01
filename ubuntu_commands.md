@@ -64,7 +64,9 @@ wg pubkey > server_public_key       ->   KJUKnOe0Pufb1jQqQLqINlZy3hUUGlOgq75qNQr
 wg genkey | tee server_private_key | wg pubkey > server_public_key     Команда для создания публичного и приватного ключа. Публичный генерируется на основе приватного
 
 
+<h1>ECHO</h1>
 
+![image](https://github.com/Daloshka/pritunl_install/assets/36123350/7fa5fcd2-ce2e-4deb-a277-d71e47507ca3)
 
 
 <h1>MISC</h1>
