@@ -66,6 +66,8 @@ wg genkey | tee server_private_key | wg pubkey > server_public_key     Кома�
 
 <h1>ECHO</h1>
 
+mkdir -p    если какой-либо из родительских каталогов не существует, команда  автоматически создаст их.
+
 ![image](https://github.com/Daloshka/pritunl_install/assets/36123350/7fa5fcd2-ce2e-4deb-a277-d71e47507ca3)
 
 
